@@ -578,7 +578,7 @@ class LlamaModel(LlamaPreTrainedModel):
         if orig_embeds_params is not None:
             orig_embeds_params = orig_embeds_params[0]
             with torch.no_grad():
-                self.get_input_embeddings().weight[:-2] = orig_embeds_params[:-2].data
+                self.get_input_embeddings().weight.data[:-2] = orig_embeds_params[:-2].data
 
         if inputs_embeds is None:
             inputs_embeds = self.embed_tokens(input_ids)

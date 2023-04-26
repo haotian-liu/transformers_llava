@@ -1476,6 +1476,7 @@ class Trainer:
                         backward_prefetch=self.backward_prefetch,
                         forward_prefetch=self.forword_prefetch,
                         limit_all_gathers=self.limit_all_gathers,
+                        use_orig_params=True,
                     )
             else:
                 try:
